@@ -250,3 +250,20 @@ if __name__ == '__main__':
     print("w3 has the new value", w3)
     print("w4 and w5 has the new value", w4)
 ```
+
+
+## Effects of Activation function and  Hidden Layer 
+
+We notices that in the given case the activation funtion was sigmoid and found the following Test accuracy :
+
+1. Test accuracy by setting the depth to 1 hidden layer: 0.8811
+1. Test accuracy by setting the depth to 2 hidden layers: 0.7908
+1. Test accuracy by setting the depth to 3 hidden layers: 0.2554
+
+By changing the activation function from "sigmoid" to "relu" we see that that Test accuracy increases with each hidden layer:
+
+1. Test accuracy by setting the depth to 1 hidden layer: 0.9273
+1. Test accuracy by setting the depth to 2 hidden layers: 0.9407
+1. Test accuracy by setting the depth to 3 hidden layers: 0.9468
+
+By analysing the behaviour of sigmoid activation function we observed the following: For X values between -2 to 2 it changes the Y values significantly, therefore a small change in that region leads to a significant change in Y(output) values that makes it good for classification. However, towards the ends of the sigmoid function the Y value have smaller change(also know as vanishing gradient) which affects the derivative of sigmoid function. The more number of hidden layers cause the gradient to multipy and the value starts going to zero. Therefore, sigmoid activation function performs worst as the hidden layer increases. We considered changing the activation function to "relu" and it indeed improves the performance as the layer increases.
