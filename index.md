@@ -8,6 +8,7 @@ For example: adding numbers 1+2+3+4+5+6+7+8+9+0 should give us 45 right? So, We 
 Therefore, testing the accuracy of the model, if the sum is more than 45 then our model overfitts the data, otherwise it underfits the data. 
 
 1. [Backpropogation](#Backpropogation)
+1. [Python Code for backpropogation](#Code_bp)
 
 <a name="Backpropogation"/>
 
@@ -23,6 +24,7 @@ That is how the backpropogation in neural network adjusts weights of each during
 
 The implemetation of nodes for a computation graph. Each node has a forward pass and a backward pass function, allowing for the evaluation and backpropagation of data. The code can be seen as follows: 
 
+<b name="Code_bp"/>
 ## Python Code for backpropogation 
 ```python
 from abc import ABC, abstractmethod
