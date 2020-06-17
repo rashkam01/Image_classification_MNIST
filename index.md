@@ -253,7 +253,9 @@ if __name__ == '__main__':
 ```
 
 <c name="Effect_AF_HL"/>
+
 ## Effects of Activation function and  Hidden Layer 
+
 
 We notices that in the given case the activation funtion was sigmoid and found the following Test accuracy :
 
