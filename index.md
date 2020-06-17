@@ -8,7 +8,7 @@ We also check the accuracy of the model by adding random 10 digits from the data
 For example: adding numbers 1+2+3+4+5+6+7+8+9+0 should give us 45 right? 
 
 So, We pick random digits from the MNIST datasets which have been classified as 0,1,2 till 9 and then take the sum of those digits to check if our generated model also provides the sum as 45. 
-Therefore, testing the accuracy of the model, if the sum is more than 45 then our model overfitts the data, otherwise it underfits the data. 
+Therefore, testing the accuracy of the model, if the sum is more than 45 then our model overfitts the data, otherwise it underfits the data. Therefore, we need improve accordingly till we get accurate answer. 
 
 1. [Backpropogation](#Backpropogation)
 1. [Python Code for backpropogation](#Code_bp)
@@ -17,7 +17,8 @@ Therefore, testing the accuracy of the model, if the sum is more than 45 then ou
 1. [Train and test split](#splitd)
 1. [Build and Train the CNN model for classification](#b_model)
 1. [Add hidden layers to check model accuracy](#hidden_layer) 
-1. [Challenge - MNIST Caluculator](#cal)
+1. [Challenge - MNIST Caluculator code](#cal_code)
+1. [Challenge - MNIST Caluculator Solution](#cal_sol)
 1. [Conclusion](#concl)
 
 
@@ -408,9 +409,17 @@ print('Test accuracy:', score[1])
 ![model_hl1](model_hl_3.PNG)
 ![plot_hl1](graph_epoch_hl3.PNG)
 
-<a name="cal"/> 
+<a name="cal_code"/> 
 
 ## Challenge - MNIST Caluculator
+
+Time for the challenge to build the Calculator. 
+
+
+<a name="cal_sol"/> 
+
+## Challenge - MNIST Caluculator Solution
+
 
 <a name="concl"/> 
 
