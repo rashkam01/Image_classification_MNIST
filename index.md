@@ -9,6 +9,7 @@ Therefore, testing the accuracy of the model, if the sum is more than 45 then ou
 
 1. [Backpropogation](#Backpropogation)
 1. [Python Code for backpropogation](#Code_bp)
+1. [Effects of Activation function and Hidden Layer](#Effect_AF_HL)
 
 <a name="Backpropogation"/>
 
@@ -251,7 +252,7 @@ if __name__ == '__main__':
     print("w4 and w5 has the new value", w4)
 ```
 
-
+<c name="Effect_AF_HL"/>
 ## Effects of Activation function and  Hidden Layer 
 
 We notices that in the given case the activation funtion was sigmoid and found the following Test accuracy :
