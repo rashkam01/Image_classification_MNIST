@@ -9,7 +9,8 @@ Therefore, testing the accuracy of the model, if the sum is more than 45 then ou
 
 1. [Backpropogation](#Backpropogation)
 
-<a name="Backpropogation">
+<a name="Backpropogation"/>
+
 ## Backpropogation
 For a classification problem in supervised learning, the following illustrates a hand made graph for backpropogation. ![backpro](backpropo.PNG)
 Considering it has single input e.g. x, (x is a pixel value that get fed into the neural network). The output neurons are typically the number of classes into which we classify the image. 
@@ -245,4 +246,3 @@ if __name__ == '__main__':
     print("w3 has the new value", w3)
     print("w4 and w5 has the new value", w4)
 ```
-</a>
