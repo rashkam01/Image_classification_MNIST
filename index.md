@@ -280,13 +280,103 @@ By analysing the behaviour of sigmoid activation function we observed the follow
 
 ## Code to Import Data
 
+Following is the python code to import MNIST dataset directly from the keras library: 
+
+```python 
+from __future__ import print_function
+import numpy as np
+np.random.seed(1234)
+
+from keras.datasets import mnist
+from keras.models import Sequential
+from keras.layers.core import Dense, Dropout, Activation #
+from keras.optimizers import SGD
+from keras.utils import np_utils
+
+
+import matplotlib.pyplot as plt
+
+batch_size = 128 #size of the piece 
+nb_classes = 10
+nb_epoch = 10
+```
+
 <a name="splitd"/> 
 
 ## Train and test split
 
+We split the data into a training and testing data before building our model: 
+```python 
+(X_train, y_train), (X_test, y_test) = mnist.load_data()
+
+X_train = X_train.reshape(60000, 784)
+X_test = X_test.reshape(10000, 784)
+
+X_train = X_train.astype('float32')
+X_test = X_test.astype('float32')
+X_train /= 255 #be careful during normalization 
+X_test /= 255
+print(X_train.shape[0], 'train samples')
+print(X_test.shape[0], 'test samples')
+
+# convert class vectors to binary class matrices
+Y_train = np_utils.to_categorical(y_train, nb_classes)
+Y_test = np_utils.to_categorical(y_test, nb_classes)
+```
+
 <a name="b_model"/>
 
 ## Build CNN model for classification
+
+To understand the effects of hidden layer with different activation function, we first use only 1 hidden layer. 
+Also, worth noticing is that we use an ReLU activation function as we saw it performs better than the sigmoid activation. 
+
+```python 
+number_hidden_layers = 1
+```
+
+```python 
+model = Sequential()
+model.add(Dense(512, input_shape=(784,), activation='relu')) 
+model.add(Dropout(0.2))
+
+while number_hidden_layers > 1:
+    model.add(Dense(512))
+    model.add(Activation('relu'))
+    model.add(Dropout(0.2))
+    number_hidden_layers -= 1
+
+
+model.add(Dense(10))
+model.add(Activation('softmax'))
+
+model.summary()
+
+model.compile(loss='categorical_crossentropy',
+              optimizer=SGD(),
+              metrics=['accuracy'])
+
+# Training (You don't need to change this part of the code)
+history = model.fit(X_train, Y_train,
+                    batch_size=batch_size, nb_epoch=nb_epoch,
+                    verbose=0, validation_data=(X_test, Y_test))
+score = model.evaluate(X_test, Y_test, verbose=0)
+print('Test score:', score[0])
+print('Test accuracy:', score[1])
+
+# list all data in history
+print(history.history.keys())
+# summarize history for accuracy
+plt.plot(history.history['acc'])
+plt.plot(history.history['val_acc'])
+plt.title('model accuracy')
+plt.ylabel('accuracy')
+plt.xlabel('epoch')
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
+```
+![model_hl1](model_hl_1.PNG)
+![plot_hl1](graph_epoch_hl1.PNG)
 
 <a name="train_d"/> 
 
