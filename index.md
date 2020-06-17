@@ -7,8 +7,6 @@ We also check the accuracy of the model by adding random 10 digits from the data
 For example: adding numbers 1+2+3+4+5+6+7+8+9+0 should give us 45 right? So, We pick random digits from the MNIST datasets which have been classified as 0,1,2 till 9 and then take the sum of those digits to check if our generated model also provides the sum as 45. 
 Therefore, testing the accuracy of the model, if the sum is more than 45 then our model overfitts the data, otherwise it underfits the data. 
 
-- [What is backpropogation in neural network ?](#What is backpropogation in neural network ? )
-  * [Sub-heading](#Python Code for backpropogation)
 1. [Backpropogation](#Backpropogation)
 
 <a name="Backpropogation">
