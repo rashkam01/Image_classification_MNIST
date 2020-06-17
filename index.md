@@ -9,7 +9,7 @@ Therefore, testing the accuracy of the model, if the sum is more than 45 then ou
 
 1. [Backpropogation](#Backpropogation)
 1. [Python Code for backpropogation](#Code_bp)
-1. [Effects of Activation function and Hidden Layer](#Effect)
+1. [Effects of Activation function and Hidden Layer](Effect)
 
 <a name="Backpropogation"/> 
 
