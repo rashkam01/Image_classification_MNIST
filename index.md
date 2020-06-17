@@ -411,18 +411,83 @@ print('Test accuracy:', score[1])
 
 <a name="cal_code"/> 
 
-## Challenge - MNIST Caluculator
+## Challenge - MNIST Caluculator Code 
 
 Time for the challenge to build the Calculator. 
+1. First we take a list of random images from our dataset  
+1. Determine the value of the MNIST image using CNN model 
+1. Use numpy libraries to append the values 
+
+Following is the python code 
+```python 
+# To generate addition 
+def gen_test():
+    
+    indices = np.random.randint(0, y_train.shape[0], size=10)
+        
+    q = np.array([x_train[i] for i in indices]).reshape(10, 28, 28, 1)
+    n = np.array([ np.argmax(y_train[i]) for i in indices])
+    s = n.cumsum()
+    a = sum(n)
+    
+    return (q, n, s, a)
+
+# Define digits 
+def generate_custom_test(digits):
+    
+    q = []
+    
+    for digit in digits:
+        s = -1
+
+        while digit != s:
+            index = np.random.randint(0, y_train.shape[0], size=1)[0]
+            s = np.argmax(y_train[index])
+                
+        q.append(x_train[index])
+         
+    q = np.array(q).reshape(10, 28, 28, 1)
+    
+    return (q, digits, np.cumsum(digits), sum(digits))
+
+# Inspect model performance 
+def inspect_test(model, q, n, s, a):
+    
+    prediction = model.predict(np.array([ q ]))
+
+    for i, digit in enumerate(q):
+        plt.subplot(1, 10, i + 1)
+        plt.axis('off')
+        plt.imshow(digit.reshape(28,28), cmap='gray', interpolation='none')
+    
+    print('Question: {}'.format(n))
+    plt.show()
+    
+    print('Real answer:', a)
+    print('Predicted answer:', prediction.flatten()[9]);
+```
 
 
 <a name="cal_sol"/> 
 
 ## Challenge - MNIST Caluculator Solution
 
+Following is the solution to our MNIST calculator. The aim is to design and train a model that produces a sum of a sequence of MNIST images. Let us consider a sequence of MNIST images ranging from 0 to 9 for example, the real cumulative sum of the sequence is 45 and you can see our model predicts 45.5 (slightly overfitting) which is extremely close.
+
+![cal_sol](cal_sol.PNG)
+
 
 <a name="concl"/> 
 
 ## Conclusion
 
-<a name="Backpropogation"/> 
+1. sequential: It is to initiate the model
+1. Convolution Layer: It is used in recognizing the digits. We define 32 filters for the first 2 convolutional layer and later define 64 filters, we use 33 feature detector to scan the original image. The input specifies 10,28,28,1 where 10 is denotes by the number of images, 2828 is the image size we define and 1 is the number of channel, here we have grey scale image hence only 1 channel.
+1. Batch Normalization: It maintains the mean activation as close to zero and standard deviation as close to 1.
+Activation Layer: We use "relu" as the activation function as it has been proved to give good accuracy as per our above analysis in 2nd part of the question.
+1. Max pooling: It helps in selecting the most relevant features from our image by dealing with spatial invariance. i.e. slanting in the hand written digits.
+1. Flatten: To end up with a 1D array.
+1. Dropout: Helps in regularization and avoid overfitting, we set activation of a neuron with probability less than 0.3 to zero. i.e. we omit those neurons.
+1. Optimizer - Adam: It combines the advantage of two other extensions of stochastic gradient descent i.e. Adaptive gradient and Root mean square propogation making it more efficient.
+
+We see that the model slightly over fits the data, but our solution is very close to the actual cumulative sum for the numbers. 
