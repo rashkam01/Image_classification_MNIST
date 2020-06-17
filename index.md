@@ -1,4 +1,4 @@
-## Image classification using Convolutional Neural Network 
+# Image classification using Convolutional Neural Network 
 
 This project explain basics of backpropogation, concept of hidden layers and building a Convolutional neural network model for MNIST dataset. MNIST dataset is a collection of images of handwritten digits. The project tries to classify each image into its appropriate number from 0 to 9. 
 
@@ -7,7 +7,10 @@ We also check the accuracy of the model by adding random 10 digits from the data
 For example: adding numbers 1+2+3+4+5+6+7+8+9+0 should give us 45 right? So, We pick random digits from the MNIST datasets which have been classified as 0,1,2 till 9 and then take the sum of those digits to check if our generated model also provides the sum as 45. 
 Therefore, testing the accuracy of the model, if the sum is more than 45 then our model overfitts the data, otherwise it underfits the data. 
 
-## What is backpropogation in neural network ? 
+- [Heading](#What is backpropogation in neural network ? )
+  * [Sub-heading](#Python Code for backpropogation)
+
+# What is backpropogation in neural network ? 
 For a classification problem in supervised learning, the following illustrates a hand made graph for backpropogation. ![backpro](backpropo.PNG)
 Considering it has single input e.g. x, (x is a pixel value that get fed into the neural network). The output neurons are typically the number of classes into which we classify the image. 
 Loss funtion is the prediction of error of Nerual Net. Activation function defines the output of the node given a certain input to the node. Learning rate defines the step size, the rate at which the function moves to the local minima. 
@@ -19,6 +22,7 @@ That is how the backpropogation in neural network adjusts weights of each during
 
 The implemetation of nodes for a computation graph. Each node has a forward pass and a backward pass function, allowing for the evaluation and backpropagation of data. The code can be seen as follows: 
 
+## Python Code for backpropogation 
 ```python
 from abc import ABC, abstractmethod
 import math
