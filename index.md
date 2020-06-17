@@ -252,10 +252,9 @@ if __name__ == '__main__':
     print("w4 and w5 has the new value", w4)
 ```
 
-<e name="Effect"/>
+<c name="Effect"/>
 
 ## Effects of Activation function and  Hidden Layer 
-
 
 We notices that in the given case the activation funtion was sigmoid and found the following Test accuracy :
 
