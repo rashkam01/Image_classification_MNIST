@@ -12,8 +12,7 @@ Therefore, testing the accuracy of the model, if the sum is more than 45 then ou
 1. [Effects of Activation function and Hidden Layer](#effect)
 1. [Code to Import Data](#imprt)
 1. [Train and test split](#splitd)
-1. [Build CNN model for classification](#b_model)
-1. [Train model on training data](#train_d)
+1. [Build and Train the CNN model for classification](#b_model)
 1. [Add hidden layers to check model accuracy](#hidden_layer) 
 1. [Challenge - MNIST Caluculator](#cal)
 1. [Conclusion](#concl)
@@ -326,7 +325,7 @@ Y_test = np_utils.to_categorical(y_test, nb_classes)
 
 <a name="b_model"/>
 
-## Build CNN model for classification
+## Build and Train the CNN model for classification
 
 To understand the effects of hidden layer with different activation function, we first use only 1 hidden layer. 
 Also, worth noticing is that we use an ReLU activation function as we saw it performs better than the sigmoid activation. 
@@ -378,13 +377,33 @@ plt.show()
 ![model_hl1](model_hl_1.PNG)
 ![plot_hl1](graph_epoch_hl1.PNG)
 
-<a name="train_d"/> 
-
-## Train model on training data
 
 <a name="hidden_layer"/> 
 
 ## Add hidden layers to check model accuracy
+
+By increasing the hidden layer only with activation function ReLU the accuracy improves, but we see that it is not the same for sigmoid activation function(it decreases significantly) 
+
+```python
+# Use this parameter to change the depth of the model
+number_hidden_layers = 3  # Number of hidden layers
+
+# Model
+# Remaining parameter are the same for building the model 
+# Training (You don't need to change this part of the code)
+history = model.fit(X_train, Y_train,
+                    batch_size=batch_size, nb_epoch=nb_epoch,
+                    verbose=0, validation_data=(X_test, Y_test))
+score = model.evaluate(X_test, Y_test, verbose=0)
+print('Test score:', score[0])
+print('Test accuracy:', score[1])
+
+# list all data in history
+# summarize history for accuracy
+```
+
+![model_hl1](model_hl_3.PNG)
+![plot_hl1](graph_epoch_hl3.PNG)
 
 <a name="cal"/> 
 
