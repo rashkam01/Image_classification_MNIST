@@ -10,6 +10,10 @@ For example: adding numbers 1+2+3+4+5+6+7+8+9+0 should give us 45 right?
 So, We pick random digits from the MNIST datasets which have been classified as 0,1,2 till 9 and then take the sum of those digits to check if our generated model also provides the sum as 45. 
 Therefore, testing the accuracy of the model, if the sum is more than 45 then our model overfitts the data, otherwise it underfits the data. Therefore, we need improve accordingly till we get accurate answer. 
 
+<a name="toc"/>
+
+## Table of content 
+
 1. [Backpropogation](#Backpropogation)
 1. [Python Code for backpropogation](#Code_bp)
 1. [Effects of Activation function and Hidden Layer](#effect)
@@ -20,6 +24,8 @@ Therefore, testing the accuracy of the model, if the sum is more than 45 then ou
 1. [Challenge - MNIST Caluculator code](#cal_code)
 1. [Challenge - MNIST Calculator Solution](#cal_sol)
 1. [Conclusion](#concl)
+
+<a name="Backpropogation"/>
 
 
 ## Backpropogation
@@ -33,6 +39,8 @@ Now, given that the learning rate is 0.1, activation function ReLU, a loss funct
 That is how the backpropogation in neural network adjusts weights of each during each epoch to finally obtain the classification. 
 
 The implemetation of nodes for a computation graph. Each node has a forward pass and a backward pass function, allowing for the evaluation and backpropagation of data. The code can be seen as follows: 
+
+[Back to Table of Contents](#toc)
 
 <b name="Code_bp"/>
 
