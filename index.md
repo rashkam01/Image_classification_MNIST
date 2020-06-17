@@ -1,5 +1,3 @@
-# Image classification using Convolutional Neural Network 
-
 This project explain basics of backpropogation, concept of hidden layers and building a Convolutional neural network model for MNIST dataset. MNIST dataset is a collection of images of handwritten digits. The project tries to classify each image into its appropriate number from 0 to 9. 
 
 But there is a little challenge in the end.. What is the challenge ? Build MNIST Calculator 
