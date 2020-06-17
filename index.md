@@ -18,7 +18,7 @@ Therefore, testing the accuracy of the model, if the sum is more than 45 then ou
 1. [Build and Train the CNN model for classification](#b_model)
 1. [Add hidden layers to check model accuracy](#hidden_layer) 
 1. [Challenge - MNIST Caluculator code](#cal_code)
-1. [Challenge - MNIST Caluculator Solution](#cal_sol)
+1. [Challenge - MNIST Calculator Solution](#cal_sol)
 1. [Conclusion](#concl)
 
 
@@ -470,7 +470,7 @@ def inspect_test(model, q, n, s, a):
 
 <a name="cal_sol"/> 
 
-## Challenge - MNIST Caluculator Solution
+## Challenge - MNIST Calculator Solution
 
 Following is the solution to our MNIST calculator. The aim is to design and train a model that produces a sum of a sequence of MNIST images. Let us consider a sequence of MNIST images ranging from 0 to 9 for example, the real cumulative sum of the sequence is 45 and you can see our model predicts 45.5 (slightly overfitting) which is extremely close.
 
@@ -479,7 +479,7 @@ Following is the solution to our MNIST calculator. The aim is to design and trai
 
 <a name="concl"/> 
 
-## Conclusion
+## Conclusion 
 
 1. sequential: It is to initiate the model
 1. Convolution Layer: It is used in recognizing the digits. We define 32 filters for the first 2 convolutional layer and later define 64 filters, we use 33 feature detector to scan the original image. The input specifies 10,28,28,1 where 10 is denotes by the number of images, 2828 is the image size we define and 1 is the number of channel, here we have grey scale image hence only 1 channel.
