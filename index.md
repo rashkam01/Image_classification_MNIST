@@ -9,8 +9,9 @@ Therefore, testing the accuracy of the model, if the sum is more than 45 then ou
 
 - [What is backpropogation in neural network ?](#What is backpropogation in neural network ? )
   * [Sub-heading](#Python Code for backpropogation)
+1. [Backpropogation](#Backpropogation)
 
-# What is backpropogation in neural network ? 
+## Backpropogation
 For a classification problem in supervised learning, the following illustrates a hand made graph for backpropogation. ![backpro](backpropo.PNG)
 Considering it has single input e.g. x, (x is a pixel value that get fed into the neural network). The output neurons are typically the number of classes into which we classify the image. 
 Loss funtion is the prediction of error of Nerual Net. Activation function defines the output of the node given a certain input to the node. Learning rate defines the step size, the rate at which the function moves to the local minima. 
