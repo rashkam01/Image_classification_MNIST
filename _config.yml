@@ -1,3 +1,3 @@
 theme: jekyll-theme-architect
 title: Image Classification 
-description: Explanation of backpropogation, activation funtion, hidden layer etc. on MNIST dataset.
+description: Explanation of backpropogation, activation funtion, hidden layer etc. for image classification using convolutional nerual network on MNIST dataset.
