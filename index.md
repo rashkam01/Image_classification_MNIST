@@ -25,7 +25,9 @@ That is how the backpropogation in neural network adjusts weights of each during
 The implemetation of nodes for a computation graph. Each node has a forward pass and a backward pass function, allowing for the evaluation and backpropagation of data. The code can be seen as follows: 
 
 <b name="Code_bp"/>
+
 ## Python Code for backpropogation 
+
 ```python
 from abc import ABC, abstractmethod
 import math
