@@ -1,4 +1,4 @@
-This project explain basics of backpropogation, concept of hidden layers and building a Convolutional neural network model for MNIST dataset. MNIST dataset is a collection of images of handwritten digits. The project tries to classify each image into its appropriate number from 0 to 9. 
+This project explain basics of backpropogation, concept of hidden layers and building a Convolutional neural network model for MNIST dataset. MNIST dataset is a collection of images of handwritten digits. The project tries to classify each image into its appropriate number from 0 to 9.  
 
 But there is a little challenge in the end.. What is the challenge ? Build MNIST Calculator 
 We also check the accuracy of the model by adding random 10 digits from the dataset to obtain the sum of those 10 digits. 
