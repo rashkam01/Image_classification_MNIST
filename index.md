@@ -18,35 +18,6 @@ Therefore, testing the accuracy of the model, if the sum is more than 45 then ou
 1. [Challenge - MNIST Caluculator](#cal)
 1. [Conclusion](#concl)
 
-<a name="imprt"/> 
-
-## Code to Import Data
-
-<a name="splitd"/> 
-
-## Train and test split
-
-<a name="b_model"/>
-
-## Build CNN model for classification
-
-<a name="train_d"/> 
-
-## Train model on training data
-
-<a name="hidden_layer"/> 
-
-## Add hidden layers to check model accuracy
-
-<a name="cal"/> 
-
-## Challenge - MNIST Caluculator
-
-<a name="concl"/> 
-
-## Conclusion
-
-<a name="Backpropogation"/> 
 
 ## Backpropogation
 For a classification problem in supervised learning, the following illustrates a hand made graph for backpropogation. ![backpro](backpropo.PNG)
@@ -304,3 +275,33 @@ By changing the activation function from "sigmoid" to "relu" we see that that Te
 1. Test accuracy by setting the depth to 3 hidden layers: 0.9468
 
 By analysing the behaviour of sigmoid activation function we observed the following: For X values between -2 to 2 it changes the Y values significantly, therefore a small change in that region leads to a significant change in Y(output) values that makes it good for classification. However, towards the ends of the sigmoid function the Y value have smaller change(also know as vanishing gradient) which affects the derivative of sigmoid function. The more number of hidden layers cause the gradient to multipy and the value starts going to zero. Therefore, sigmoid activation function performs worst as the hidden layer increases. We considered changing the activation function to "relu" and it indeed improves the performance as the layer increases.
+
+<a name="imprt"/> 
+
+## Code to Import Data
+
+<a name="splitd"/> 
+
+## Train and test split
+
+<a name="b_model"/>
+
+## Build CNN model for classification
+
+<a name="train_d"/> 
+
+## Train model on training data
+
+<a name="hidden_layer"/> 
+
+## Add hidden layers to check model accuracy
+
+<a name="cal"/> 
+
+## Challenge - MNIST Caluculator
+
+<a name="concl"/> 
+
+## Conclusion
+
+<a name="Backpropogation"/> 
